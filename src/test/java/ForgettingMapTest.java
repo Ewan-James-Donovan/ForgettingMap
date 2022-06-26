@@ -2,8 +2,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ForgettingMapTest {
-	
-	@Test
+    
+    @Test
     public void testAddAndFind() {
 		String key = "this is a key";
 		String value = "this is a value";
@@ -18,7 +18,7 @@ public class ForgettingMapTest {
         assertEquals(value, map.find(alternateKey));
     }
 	
-	@Test
+    @Test
     public void testCapacity() {
 		ForgettingMap<Integer, String> map = new ForgettingMap<Integer, String>(5);
 		for (int i = 0; i < 10; i++) {
@@ -30,7 +30,7 @@ public class ForgettingMapTest {
         }
     }
 	
-	@Test
+    @Test
     public void testFrequency() {
 		ForgettingMap<Integer, String> map = new ForgettingMap<Integer, String>(1);
 		map.add(0, "a value");
@@ -40,7 +40,7 @@ public class ForgettingMapTest {
         assertEquals("{0=a value=10}", map.toString());
     }
 	
-	@Test
+    @Test
     public void testLeastFrequentRemoval() {
 		ForgettingMap<Integer, String> map = new ForgettingMap<Integer, String>(5);
 		for (int i = 0; i < 10; i++) {
@@ -55,7 +55,7 @@ public class ForgettingMapTest {
         assertEquals("a value", map.find(9));
     }
 	
-	@Test
+    @Test
     public void testLeastFrequentRemovalTieBreaker() {
 		ForgettingMap<Integer, String> map = new ForgettingMap<Integer, String>(3);
 		map.add(0, "a value");
@@ -72,7 +72,7 @@ public class ForgettingMapTest {
         }
     }
 	
-	@Test
+    @Test
     public void testRemoval() {
 		ForgettingMap<Integer, String> map = new ForgettingMap<Integer, String>(1);
 		map.add(0, "a value");
