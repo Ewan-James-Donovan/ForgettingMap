@@ -10,8 +10,8 @@ import java.util.AbstractMap.SimpleEntry;
 // Generics allow for any type key or value.
 public class ForgettingMap<K,V> {
 	
-	// LinkedHashMap is used as it is order-preserving, and I've used order of addition as the 'tie breaker' (first in, first out).
-	// Frequency of retrieval is held as an integer along with the value in an Entry. I'm using the Entry type as if it were a tuple.
+    // LinkedHashMap is used as it is order-preserving, and I've used order of addition as the 'tie breaker' (first in, first out).
+    // Frequency of retrieval is held as an integer along with the value in an Entry. I'm using the Entry type as if it were a tuple.
     private final Map<K,Entry<V,Integer>> keyValueFrequencyMap = new LinkedHashMap<K, Entry<V, Integer>>();
     private Integer capacity;
 
