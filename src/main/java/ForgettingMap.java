@@ -25,10 +25,10 @@ public class ForgettingMap<K, V> {
         	if(keyValueFrequencyMap.size() + 1 > capacity) {
         		keyValueFrequencyMap.remove(getLeastFrequentlyAccessedKey());
         	}
-        	keyValueFrequencyMap.put(key, new SimpleEntry<V,Integer>(value, 0));
+        	keyValueFrequencyMap.put(key, new SimpleEntry<V, Integer>(value, 0));
         	return key;
         }
-        keyValueFrequencyMap.put(key, new SimpleEntry<V,Integer>(value, getFrequency(key)));
+        keyValueFrequencyMap.put(key, new SimpleEntry<V, Integer>(value, getFrequency(key)));
         return key;
     }
 
@@ -76,10 +76,10 @@ public class ForgettingMap<K, V> {
 
     private K getLeastFrequentlyAccessedKey() {
         Map.Entry<K, Integer> least = new SimpleEntry<K, Integer>(null, Integer.MAX_VALUE);
-        for (Map.Entry<K,Map.Entry<V,Integer>> entry: keyValueFrequencyMap.entrySet()) {
+        for (Map.Entry<K,Map.Entry<V, Integer>> entry: keyValueFrequencyMap.entrySet()) {
             Integer frequency = getFrequency(entry.getKey());
             if (frequency < least.getValue()) {
-                least = new SimpleEntry<K,Integer>(entry.getKey(), frequency);
+                least = new SimpleEntry<K, Integer>(entry.getKey(), frequency);
             }
         }
         return least.getKey();
